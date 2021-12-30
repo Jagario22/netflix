@@ -52,6 +52,9 @@
         <Class IRI="#Media"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#MovieList"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Person"/>
     </Declaration>
     <Declaration>

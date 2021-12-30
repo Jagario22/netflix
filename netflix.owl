@@ -52,7 +52,7 @@
         <Class IRI="#Media"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#MovieList"/>
+        <Class IRI="#MediaList"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Person"/>
@@ -133,7 +133,7 @@
         <ObjectProperty IRI="#hasMainCard"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasMovie"/>
+        <ObjectProperty IRI="#hasMedia"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasProfile"/>
@@ -232,9 +232,6 @@
         <DataProperty IRI="#resolutionWidth"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#text"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#title"/>
     </Declaration>
     <Declaration>
@@ -242,6 +239,24 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#year"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EN"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RU"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UKR"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UltraHD"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="#AgeLimit"/>
@@ -317,6 +332,13 @@
         </ObjectMinCardinality>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#MediaList"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hasMedia"/>
+            <Class IRI="#Media"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#Plan"/>
         <ObjectExactCardinality cardinality="1">
             <ObjectProperty IRI="#hasQuality"/>
@@ -335,10 +357,17 @@
     </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#User"/>
-        <ObjectExactCardinality cardinality="1">
+        <ObjectMinCardinality cardinality="1">
             <ObjectProperty IRI="#hasMainCard"/>
             <Class IRI="#Card"/>
-        </ObjectExactCardinality>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#User"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hasProfile"/>
+            <Class IRI="#Profile"/>
+        </ObjectMinCardinality>
     </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#User"/>
@@ -346,13 +375,6 @@
             <ObjectProperty IRI="#hasSubscription"/>
             <Class IRI="#Plan"/>
         </ObjectExactCardinality>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#User"/>
-        <ObjectMaxCardinality cardinality="5">
-            <ObjectProperty IRI="#hasProfile"/>
-            <Class IRI="#Profile"/>
-        </ObjectMaxCardinality>
     </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#AgeLimit"/>
@@ -424,7 +446,7 @@
         </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#MovieList"/>
+        <Class IRI="#MediaList"/>
         <Class IRI="#DomainThing"/>
     </SubClassOf>
     <SubClassOf>
@@ -437,10 +459,10 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Plan"/>
-        <ObjectMinCardinality cardinality="1">
+        <ObjectExactCardinality cardinality="1">
             <ObjectProperty IRI="#ofCountry"/>
             <Class IRI="#Country"/>
-        </ObjectMinCardinality>
+        </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Profile"/>
@@ -526,6 +548,30 @@
         <Class IRI="#18+"/>
         <Class IRI="#7+"/>
     </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Language"/>
+        <NamedIndividual IRI="#EN"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Quality"/>
+        <NamedIndividual IRI="#HD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Language"/>
+        <NamedIndividual IRI="#RU"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Quality"/>
+        <NamedIndividual IRI="#SD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Language"/>
+        <NamedIndividual IRI="#UKR"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Quality"/>
+        <NamedIndividual IRI="#UltraHD"/>
+    </ClassAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#dislike"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
@@ -571,7 +617,7 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasMovie"/>
+        <ObjectProperty IRI="#hasMedia"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -659,10 +705,6 @@
         </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasEpisode"/>
-        <Class IRI="#Season"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasFeature"/>
         <Class IRI="#Media"/>
     </ObjectPropertyDomain>
@@ -673,6 +715,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasMainCard"/>
         <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMedia"/>
+        <Class IRI="#MediaList"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasProfile"/>
@@ -704,7 +750,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#like"/>
-        <Class IRI="#User"/>
+        <Class IRI="#Profile"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#ofCountry"/>
@@ -715,7 +761,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#similarTo"/>
-        <Class IRI="#Film"/>
+        <Class IRI="#Media"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#started"/>
@@ -762,6 +808,10 @@
         <Class IRI="#Card"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMedia"/>
+        <Class IRI="#Media"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasProfile"/>
         <Class IRI="#Profile"/>
     </ObjectPropertyRange>
@@ -799,7 +849,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#similarTo"/>
-        <Class IRI="#Film"/>
+        <Class IRI="#Media"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#started"/>
@@ -890,10 +940,6 @@
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
-        <DataProperty IRI="#text"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
         <DataProperty IRI="#title"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
@@ -932,6 +978,10 @@
     <DataPropertyDomain>
         <DataProperty IRI="#firstName"/>
         <Class IRI="#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hours"/>
+        <Class IRI="#Duration"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#isUnlimitedMedia"/>
@@ -1030,6 +1080,10 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="#hours"/>
+        <Datatype abbreviatedIRI="xsd:short"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#isUnlimitedMedia"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
@@ -1085,10 +1139,6 @@
     <DataPropertyRange>
         <DataProperty IRI="#resolutionWidth"/>
         <Datatype abbreviatedIRI="xsd:short"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#text"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#title"/>

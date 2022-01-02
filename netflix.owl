@@ -181,6 +181,9 @@
         <DataProperty IRI="#countOfDisplays"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#currencyOfPrice"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#dateOfSubscription"/>
     </Declaration>
     <Declaration>
@@ -241,10 +244,46 @@
         <DataProperty IRI="#year"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Action"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Andrew_Adamson"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Base"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cameron_Diaz"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Card1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Duration1"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#EN"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Eddie_Murphy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FamilyMovies"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#HD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mike_Myers"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Premium"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Profile1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Profile2"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#RU"/>
@@ -253,10 +292,31 @@
         <NamedIndividual IRI="#SD"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#UKR"/>
+        <NamedIndividual IRI="#Shrek"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Standard"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Trend"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#USA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ukraine"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#UltraHD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#User1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Vicky_Jenson"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Witty"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="#AgeLimit"/>
@@ -267,6 +327,13 @@
             <Class IRI="#18+"/>
             <Class IRI="#7+"/>
         </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Country"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#USA"/>
+            <NamedIndividual IRI="#Ukraine"/>
+        </ObjectOneOf>
     </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#Film"/>
@@ -309,6 +376,13 @@
                 </ObjectSomeValuesFrom>
             </ObjectUnionOf>
         </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Language"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#EN"/>
+            <NamedIndividual IRI="#RU"/>
+        </ObjectOneOf>
     </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#Media"/>
@@ -549,12 +623,60 @@
         <Class IRI="#7+"/>
     </DisjointClasses>
     <ClassAssertion>
+        <Class IRI="#Feature"/>
+        <NamedIndividual IRI="#Action"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Person"/>
+        <NamedIndividual IRI="#Andrew_Adamson"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Plan"/>
+        <NamedIndividual IRI="#Base"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Person"/>
+        <NamedIndividual IRI="#Cameron_Diaz"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Card"/>
+        <NamedIndividual IRI="#Card1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Duration"/>
+        <NamedIndividual IRI="#Duration1"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Language"/>
         <NamedIndividual IRI="#EN"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Person"/>
+        <NamedIndividual IRI="#Eddie_Murphy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Feature"/>
+        <NamedIndividual IRI="#FamilyMovies"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Quality"/>
         <NamedIndividual IRI="#HD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Person"/>
+        <NamedIndividual IRI="#Mike_Myers"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Plan"/>
+        <NamedIndividual IRI="#Premium"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Profile"/>
+        <NamedIndividual IRI="#Profile1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Profile"/>
+        <NamedIndividual IRI="#Profile2"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Language"/>
@@ -565,13 +687,170 @@
         <NamedIndividual IRI="#SD"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Language"/>
-        <NamedIndividual IRI="#UKR"/>
+        <Class IRI="#DomainThing"/>
+        <NamedIndividual IRI="#Shrek"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Media"/>
+        <NamedIndividual IRI="#Shrek"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Plan"/>
+        <NamedIndividual IRI="#Standard"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MediaList"/>
+        <NamedIndividual IRI="#Trend"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Country"/>
+        <NamedIndividual IRI="#USA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Country"/>
+        <NamedIndividual IRI="#Ukraine"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Quality"/>
         <NamedIndividual IRI="#UltraHD"/>
     </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#User"/>
+        <NamedIndividual IRI="#User1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Person"/>
+        <NamedIndividual IRI="#Vicky_Jenson"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Witty"/>
+    </ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#firstName"/>
+        <NamedIndividual IRI="#Andrew_Adamson"/>
+        <Literal>Andrew</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#lastName"/>
+        <NamedIndividual IRI="#Andrew_Adamson"/>
+        <Literal>Adamson</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#IsShownOnDiffDevices"/>
+        <NamedIndividual IRI="#Base"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#countOfDisplays"/>
+        <NamedIndividual IRI="#Base"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#short">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#currencyOfPrice"/>
+        <NamedIndividual IRI="#Base"/>
+        <Literal>euro</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUnlimitedMedia"/>
+        <NamedIndividual IRI="#Base"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#price"/>
+        <NamedIndividual IRI="#Base"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">4.99</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#firstName"/>
+        <NamedIndividual IRI="#Cameron_Diaz"/>
+        <Literal>Cameron</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#lastName"/>
+        <NamedIndividual IRI="#Cameron_Diaz"/>
+        <Literal>Diaz</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#firstName"/>
+        <NamedIndividual IRI="#Eddie_Murphy"/>
+        <Literal>Eddie</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#lastName"/>
+        <NamedIndividual IRI="#Eddie_Murphy"/>
+        <Literal>Murphy</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#firstName"/>
+        <NamedIndividual IRI="#Mike_Myers"/>
+        <Literal>Mike</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#lastName"/>
+        <NamedIndividual IRI="#Mike_Myers"/>
+        <Literal>Myers</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#IsShownOnDiffDevices"/>
+        <NamedIndividual IRI="#Premium"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#countOfDisplays"/>
+        <NamedIndividual IRI="#Premium"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#short">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#currencyOfPrice"/>
+        <NamedIndividual IRI="#Premium"/>
+        <Literal>euro</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUnlimitedMedia"/>
+        <NamedIndividual IRI="#Premium"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#price"/>
+        <NamedIndividual IRI="#Premium"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">7.49</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#IsShownOnDiffDevices"/>
+        <NamedIndividual IRI="#Standard"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#countOfDisplays"/>
+        <NamedIndividual IRI="#Standard"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#short">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#currencyOfPrice"/>
+        <NamedIndividual IRI="#Standard"/>
+        <Literal>euro</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isUnlimitedMedia"/>
+        <NamedIndividual IRI="#Standard"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#price"/>
+        <NamedIndividual IRI="#Standard"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">9.99</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#firstName"/>
+        <NamedIndividual IRI="#Vicky_Jenson"/>
+        <Literal>Vicky</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#lastName"/>
+        <NamedIndividual IRI="#Vicky_Jenson"/>
+        <Literal>Jenson</Literal>
+    </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#dislike"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
@@ -872,6 +1151,10 @@
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
+        <DataProperty IRI="#currencyOfPrice"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
         <DataProperty IRI="#dateOfSubscription"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
@@ -965,6 +1248,10 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#countOfDisplays"/>
+        <Class IRI="#Plan"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#currencyOfPrice"/>
         <Class IRI="#Plan"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -1068,6 +1355,10 @@
         <Datatype abbreviatedIRI="xsd:short"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="#currencyOfPrice"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#dateOfSubscription"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
@@ -1126,9 +1417,9 @@
     <DataPropertyRange>
         <DataProperty IRI="#price"/>
         <DatatypeRestriction>
-            <Datatype abbreviatedIRI="xsd:integer"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
             <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minExclusive">
-                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">0</Literal>
             </FacetRestriction>
         </DatatypeRestriction>
     </DataPropertyRange>
